@@ -1,5 +1,5 @@
 [package]
-name = "stm32-helloworld"
+name = "newtry"
 version = "0.1.0"
 edition = "2021"
 
@@ -12,10 +12,7 @@ cortex-m = "0.7.4"
 cortex-m-rt = "0.6.15"
 # Panic behaviour, see https://crates.io/keywords/panic-impl for alternatives
 panic-halt = "0.2"
-
-[dependencies.stm32f4xx-hal]
-version = "0.10"
-features = ["rt", "stm32f446"]
+stm32f4xx-hal = { version = "0.9.0", features = ["stm32f446"] }
 
 [profile.release]
 codegen-units = 1 # better optimizations
@@ -23,7 +20,7 @@ debug = true # symbols are nice and they don't increase the size on Flash
 lto = true # better optimizations
 
 [[bin]]
-name = "helloworld"
+name = "newtry"
 path = "src/main.rs"
 test = false
 bench = false
